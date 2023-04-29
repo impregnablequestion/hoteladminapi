@@ -1,4 +1,5 @@
 using HotelAdmin.API.DbContexts;
+using HotelAdmin.API.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddDbContext<HotelContext>(
     dbContextOptions => dbContextOptions.UseSqlServer(
         builder.Configuration["ConnectionStrings:HotelDbConnectionString"])
 );
+builder.Services.AddScoped<IHotelInfoRepository, HotelInfoRepository>();
 
 var app = builder.Build();
 
