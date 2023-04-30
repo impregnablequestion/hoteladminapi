@@ -68,10 +68,7 @@ public class HotelInfoRepository : IHotelInfoRepository
     public async Task AddRoomAsync(int hotelId, Room room)
     {
         var hotel = await GetHotelAsync(hotelId, false);
-        if (hotel != null)
-        {
-            hotel.Rooms.Add(room);
-        }
+        hotel?.Rooms.Add(room);
     }
 
     public void DeleteRoomAsync(Room room)

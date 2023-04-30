@@ -180,7 +180,6 @@ public class HotelInfoRepositoryTests : IDisposable
         await context.Hotels.AddAsync(hotel);
         await context.SaveChangesAsync();
         
-
         // Act
         var result = await _repository.HotelExistsAsync(hotel.Id);
 
@@ -383,7 +382,7 @@ public class HotelInfoRepositoryTests : IDisposable
             PhoneNumber = "07317893721",
             Website = "www.hotel.com"
         };
-        var room = new Room { Id = 1, HotelId = hotel.Id, Capacity = 4, PricePerNight = 80.00m};
+        var room = new Room { Capacity = 4, PricePerNight = 80.00m};
 
         using (var context = new HotelContext(_options))
         {
@@ -429,36 +428,12 @@ public class HotelInfoRepositoryTests : IDisposable
 
         // Act
         _repository.DeleteRoomAsync(room);
-
-        // Assert
-        using (var context = new HotelContext(_options))
-        {
-            Assert.Equal(0, await context.Rooms.CountAsync());
-        }
-    }
-
-    [Fact]
-    public async Task SaveChangesAsync_SavesChangesToContext()
-    {
-        // Arrange
-        var hotel = new Hotel { 
-            Id = 1, 
-            Name = "Hotel A", 
-            Address = "123 Fake Street", 
-            Country = "Scotland", 
-            Email = "hotelb@gmail.com", 
-            PhoneNumber = "07317893721",
-            Website = "www.hotel.com"
-        };
-
-
-        await _repository.AddHotelAsync(hotel);
         await _repository.SaveChangesAsync();
 
         // Assert
         using (var context = new HotelContext(_options))
         {
-            Assert.Equal(1, await context.Hotels.CountAsync());
+            Assert.Equal(0, await context.Rooms.CountAsync());
         }
     }
 }

@@ -1,4 +1,5 @@
 using HotelAdmin.API.Entities;
+using HotelAdmin.API.Models.RoomDtos;
 
 namespace HotelAdmin.API.Models.HotelDtos;
 
@@ -13,7 +14,7 @@ public class HotelDto
     public string Website { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string? City { get; set; }
-    public ICollection<Room> Rooms { get; set; } = new List<Room>();
+    public ICollection<RoomDto> Rooms { get; set; } = new List<RoomDto>();
     
     //calculated fields
     public int NumberOfRooms => Rooms.Count;

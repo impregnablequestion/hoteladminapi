@@ -15,6 +15,7 @@ builder.Services.AddDbContext<HotelContext>(
         builder.Configuration["ConnectionStrings:HotelDbConnectionString"])
 );
 builder.Services.AddScoped<IHotelInfoRepository, HotelInfoRepository>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 

@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelAdmin.API", "HotelAdmin.API\HotelAdmin.API.csproj", "{C8886229-ADBD-42F5-BB97-5303D516BCB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelAdmin.UnitTests", "HotelAdmin.UnitTests\HotelAdmin.UnitTests.csproj", "{2F20F7A4-B525-4F41-8C4C-20E258542BB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelAdmin.Testing", "HotelAdmin.Testing\HotelAdmin.Testing.csproj", "{2F20F7A4-B525-4F41-8C4C-20E258542BB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
