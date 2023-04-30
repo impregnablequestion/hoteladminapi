@@ -29,4 +29,9 @@
       <ProjectReference Include="..\HotelAdmin.API\HotelAdmin.API.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="HotelTests\" />
+      <Folder Include="RoomTests\" />
+    </ItemGroup>
+
 </Project>
