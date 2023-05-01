@@ -16,17 +16,17 @@ public interface IHotelInfoRepository
 
     Task AddHotelAsync(Hotel hotel);
 
-    void DeleteHotelAsync(Hotel hotel);
+    void DeleteHotel(Hotel hotel);
     
     // rooms 
     
     Task<IEnumerable<Room>> GetRoomsForHotelAsync(int hotelId);
 
-    Task<IEnumerable<Room>> GetRoomAsync(int hotelId, int roomId);
+    Task<Room?> GetRoomAsync(int hotelId, int roomId);
 
     Task AddRoomAsync(int hotelId, Room room);
 
-    void DeleteRoomAsync(Room room);
+    void DeleteRoom(Room room);
     
     // save changes to context
 

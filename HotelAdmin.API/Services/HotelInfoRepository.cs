@@ -44,7 +44,7 @@ public class HotelInfoRepository : IHotelInfoRepository
         await _context.AddAsync(hotel);
     }
 
-    public void DeleteHotelAsync(Hotel hotel)
+    public void DeleteHotel(Hotel hotel)
     {
         _context.Remove(hotel);
     }
@@ -58,11 +58,11 @@ public class HotelInfoRepository : IHotelInfoRepository
             .ToListAsync();
     }
 
-    public async Task<IEnumerable<Room>> GetRoomAsync(int hotelId, int roomId)
+    public async Task<Room?> GetRoomAsync(int hotelId, int roomId)
     {
         return await _context.Rooms
             .Where(r => r.HotelId == hotelId && r.Id == roomId)
-            .ToListAsync();
+            .FirstOrDefaultAsync();
     }
 
     public async Task AddRoomAsync(int hotelId, Room room)
@@ -71,7 +71,7 @@ public class HotelInfoRepository : IHotelInfoRepository
         hotel?.Rooms.Add(room);
     }
 
-    public void DeleteRoomAsync(Room room)
+    public void DeleteRoom(Room room)
     {
         _context.Rooms.Remove(room);
     }

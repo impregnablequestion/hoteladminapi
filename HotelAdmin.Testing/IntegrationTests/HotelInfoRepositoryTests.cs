@@ -242,7 +242,7 @@ public class HotelInfoRepositoryTests : IDisposable
     }
 
     [Fact]
-    public async Task DeleteHotelAsync_DeletesExistingHotel()
+    public async Task DeleteHotel_DeletesExistingHotel()
     {
         // Arrange
         var hotel = new Hotel { 
@@ -262,7 +262,7 @@ public class HotelInfoRepositoryTests : IDisposable
         }
 
         // Act
-        _repository.DeleteHotelAsync(hotel);
+        _repository.DeleteHotel(hotel);
         await _repository.SaveChangesAsync();
 
         // Assert
@@ -338,8 +338,8 @@ public class HotelInfoRepositoryTests : IDisposable
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(rooms[0].Id, result.FirstOrDefault().Id);
-        Assert.Equal(rooms[0].HotelId, result.FirstOrDefault().HotelId);
+        Assert.Equal(rooms[0].Id, result.Id);
+        Assert.Equal(rooms[0].HotelId, result.HotelId);
     }
 
     [Fact]
@@ -366,7 +366,7 @@ public class HotelInfoRepositoryTests : IDisposable
         var result = await _repository.GetRoomAsync(hotel.Id, 99);
 
         // Assert
-        Assert.Empty(result);
+        Assert.Null(result);
     }
 
     [Fact]
@@ -405,7 +405,7 @@ public class HotelInfoRepositoryTests : IDisposable
     }
 
     [Fact]
-    public async Task DeleteRoomAsync_DeletesExistingRoom()
+    public async Task DeleteRoom_DeletesExistingRoom()
     {
         // Arrange
         var hotel = new Hotel { 
@@ -427,7 +427,7 @@ public class HotelInfoRepositoryTests : IDisposable
         }
 
         // Act
-        _repository.DeleteRoomAsync(room);
+        _repository.DeleteRoom(room);
         await _repository.SaveChangesAsync();
 
         // Assert

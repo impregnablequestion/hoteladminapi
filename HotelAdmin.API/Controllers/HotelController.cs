@@ -28,7 +28,7 @@ public class HotelController : ControllerBase
         return Ok(_mapper.Map<IEnumerable<HotelWithoutRoomsDto>>(hotelsToReturn));
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}", Name = "GetHotelById")]
     public async Task<ActionResult<HotelDto>> GetHotelById(int id, bool includeRooms = false)
     {
         var hotelToReturn = await _repository.GetHotelAsync(id, includeRooms);
@@ -42,10 +42,6 @@ public class HotelController : ControllerBase
             ? Ok(_mapper.Map<HotelDto>(hotelToReturn))
             : Ok(_mapper.Map<HotelWithoutRoomsDto>(hotelToReturn));
     }
-    
-    //TODO: Fix post route so that CreatedAtRoute returns properly.
-    
-    // currently it will save the resource but won't return proper confirmation and direction to that resource
 
     [HttpPost]
     public async Task<ActionResult<HotelDto>> CreateHotel(HotelToCreateDto hotelToCreate)
@@ -56,9 +52,44 @@ public class HotelController : ControllerBase
 
         var createdHotel = _mapper.Map<HotelDto>(hotelToAdd);
 
-        return CreatedAtRoute(
-        "GetHotelById",
-        new { Id = createdHotel.Id },
+        return CreatedAtRoute("GetHotelById",
+            new
+            {
+                id = createdHotel.Id
+            },
             createdHotel);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult> UpdateHotel(HotelToUpdateDto hotelToUpdate, int id)
+    {
+        var hotelEntity = await _repository.GetHotelAsync(id, true);
+
+        if (hotelEntity == null)
+        {
+            return NotFound();
+        }
+
+        _mapper.Map(hotelToUpdate, hotelEntity);
+
+        await _repository.SaveChangesAsync();
+
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<HotelDto>> DeleteHotel(int id)
+    {
+        var hotelEntity = await _repository.GetHotelAsync(id, false);
+
+        if (hotelEntity == null)
+        {
+            return NotFound();
+        }
+        
+        _repository.DeleteHotel(hotelEntity);
+        await _repository.SaveChangesAsync();
+        
+        return NoContent();
     }
 }

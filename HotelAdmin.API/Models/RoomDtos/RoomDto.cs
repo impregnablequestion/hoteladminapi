@@ -12,6 +12,7 @@ public class RoomDto
     public string? RoomNumber { get; set; }
     public RoomType? Type { get; set; }
     public string? Description { get; set; }
+    public int HotelId { get; set; }
     
     // calculated fields & methods
     public decimal PriceToBook(int numOfNights) => numOfNights * PricePerNight;
