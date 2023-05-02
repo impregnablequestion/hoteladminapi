@@ -70,13 +70,35 @@ namespace HotelAdmin.API.Migrations
                         new
                         {
                             Id = 1,
-                            Address = "18 Dixon Avenue, Glasgow, G42 8LT",
+                            Address = "18 Argyle Street, Glasgow, G42 8LT",
                             City = "Glasgow",
                             Country = "Scotland",
                             Email = "radissonblue@gmail.com",
                             Name = "Radisson Blue",
-                            PhoneNumber = "+07307186731",
+                            PhoneNumber = "+0913839409",
                             Website = "https://www.radisson.blue"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "12 O'Connell Street, Dublin, D1",
+                            City = "Dublin",
+                            Country = "Ireland",
+                            Email = "yotel@gmail.com",
+                            Name = "Yotel",
+                            PhoneNumber = "+0837481739",
+                            Website = "www.yotel.com"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Address = "4 Oxford Street, London SW14",
+                            City = "London",
+                            Country = "United Kingdom",
+                            Email = "hilton@gmail.com",
+                            Name = "Hilton London",
+                            PhoneNumber = "+0038291039901",
+                            Website = "www.hilton.com"
                         });
                 });
 
@@ -92,7 +114,8 @@ namespace HotelAdmin.API.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("HotelId")
                         .HasColumnType("int");
@@ -116,11 +139,398 @@ namespace HotelAdmin.API.Migrations
                         new
                         {
                             Id = 1,
-                            Capacity = 4,
-                            Description = "Just a bog standard hotel room really!",
+                            Capacity = 5,
+                            Description = "Auto-created Room for Radisson",
                             HotelId = 1,
                             PricePerNight = 80.00m,
-                            Type = 3
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Capacity = 4,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Capacity = 5,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Capacity = 2,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Capacity = 3,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Capacity = 4,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Capacity = 1,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Capacity = 1,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Capacity = 2,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Capacity = 5,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Capacity = 4,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Capacity = 1,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Capacity = 2,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Capacity = 4,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Capacity = 4,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Capacity = 1,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Capacity = 4,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Capacity = 5,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Capacity = 5,
+                            Description = "Auto-created Room for Radisson",
+                            HotelId = 1,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Capacity = 3,
+                            Description = "Auto-created Room for Yotel",
+                            HotelId = 2,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Capacity = 3,
+                            Description = "Auto-created Room for Yotel",
+                            HotelId = 2,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Capacity = 1,
+                            Description = "Auto-created Room for Yotel",
+                            HotelId = 2,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Capacity = 5,
+                            Description = "Auto-created Room for Yotel",
+                            HotelId = 2,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Capacity = 4,
+                            Description = "Auto-created Room for Yotel",
+                            HotelId = 2,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Capacity = 5,
+                            Description = "Auto-created Room for Yotel",
+                            HotelId = 2,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Capacity = 4,
+                            Description = "Auto-created Room for Yotel",
+                            HotelId = 2,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Capacity = 2,
+                            Description = "Auto-created Room for Yotel",
+                            HotelId = 2,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Capacity = 3,
+                            Description = "Auto-created Room for Yotel",
+                            HotelId = 2,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Capacity = 1,
+                            Description = "Auto-created Room for Yotel",
+                            HotelId = 2,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Capacity = 4,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Capacity = 1,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Capacity = 5,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Capacity = 2,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Capacity = 1,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Capacity = 2,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Capacity = 3,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Capacity = 2,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Capacity = 2,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Capacity = 1,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Capacity = 3,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Capacity = 2,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Capacity = 4,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Capacity = 1,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Capacity = 1,
+                            Description = "Auto-created Room for Hilton",
+                            HotelId = 3,
+                            PricePerNight = 80.00m,
+                            Type = 2
                         });
                 });
 

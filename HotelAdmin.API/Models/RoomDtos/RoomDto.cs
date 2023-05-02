@@ -16,4 +16,5 @@ public class RoomDto
     
     // calculated fields & methods
     public decimal PriceToBook(int numOfNights) => numOfNights * PricePerNight;
+    public string RoomType() => Type.ToString();
 }
